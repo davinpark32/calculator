@@ -78,6 +78,12 @@ menu.addEventListener('click', (event) => {
             currentNumber += '0';
             display.textContent = currentNumber;
             break;
+        case 'decimal':
+            if(!currentNumber.includes('.')) {
+                currentNumber += '.';
+                display.textContent = currentNumber;
+            }
+            break;
         case 'plus':
             myArr.push(display.textContent);
             if (myArr.length == 2) {
