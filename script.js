@@ -15,6 +15,7 @@ let currentNumber = '';
 let firstNumber = '';
 let operator = '';
 let secondNumber;
+let myArr = [];
 
 function operate (operator, num1, num2) {
     switch(operator) {
@@ -52,10 +53,31 @@ menu.addEventListener('click', (event) => {
             operator = '+';
             console.log(firstNumber);
             break;
+        case 'minus' :
+            myArr.push(display.textContent);  //[2,2]
+            if (myArr.length == 2) {
+                console.log('two arrays');
+                display.textContent = operate(operator, +myArr[0], +myArr[1]);
+                myArr.push(display.textContent);
+                console.log(myArr);
+                myArr.splice(0,2);
+                currentNumber =''
+                break;
+            } else {
+                console.log(myArr);
+                currentNumber = '';
+                display.textContent = '0';
+                operator = '-';
+                console.log(myArr);
+                break;
+
+            }
         case 'equal':
-            secondNumber = display.textContent;
-            console.log(`${firstNumber} / ${secondNumber}`);
-            display.textContent = operate(operator, +firstNumber, +secondNumber);
+            myArr.push(currentNumber);
+            console.log(`${myArr[0]} / ${myArr[1]}`);
+            display.textContent = operate(operator, +myArr[0], +myArr[1]);
+            myArr.splice(0,2);
+            console.log(myArr);
             break;
     }
 });
