@@ -163,6 +163,12 @@ menu.addEventListener('click', (event) => {
             myArr.splice(0,2);
             console.log(myArr);
             break;
+        case 'clear':
+            myArr = [];
+            currentNumber = '';
+            display.textContent = '0'
+            operator = '';
+            break;
     }
 });
 
