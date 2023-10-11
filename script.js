@@ -46,8 +46,40 @@ menu.addEventListener('click', (event) => {
             currentNumber += '2';
             display.textContent = currentNumber;
             break;
+        case 'three':
+            currentNumber += '3';
+            display.textContent = currentNumber;
+            break;
+        case 'four':
+            currentNumber += '4';
+            display.textContent = currentNumber;
+            break;
+        case 'five':
+            currentNumber += '5';
+            display.textContent = currentNumber;
+            break;
+        case 'six':
+            currentNumber += '6';
+            display.textContent = currentNumber;
+            break;
+        case 'seven':
+            currentNumber += '7';
+            display.textContent = currentNumber;
+            break;
+        case '8':
+            currentNumber += '8';
+            display.textContent = currentNumber;
+            break;
+        case 'nine':
+            currentNumber += '9';
+            display.textContent = currentNumber;
+            break;
+        case 'zero':
+            currentNumber += '0';
+            display.textContent = currentNumber;
+            break;
         case 'plus':
-            myArr.push(display.textContent);  //[2,2]
+            myArr.push(display.textContent);
             if (myArr.length == 2) {
                 console.log('two arrays');
                 display.textContent = operate(operator, +myArr[0], +myArr[1]);
@@ -60,7 +92,7 @@ menu.addEventListener('click', (event) => {
             } else {
                 console.log(myArr);
                 currentNumber = '';
-                display.textContent = '0';
+                display.textContent = 'X';
                 operator = '+';
                 console.log(myArr);
                 break;
@@ -80,8 +112,46 @@ menu.addEventListener('click', (event) => {
             } else {
                 console.log(myArr);
                 currentNumber = '';
-                display.textContent = '0';
+                display.textContent = 'X';
                 operator = '-';
+                console.log(myArr);
+                break;
+            }
+        case 'multiply' :
+            myArr.push(display.textContent);  //[2,2]
+            if (myArr.length == 2) {
+                console.log('two arrays');
+                display.textContent = operate(operator, +myArr[0], +myArr[1]);
+                myArr.push(display.textContent);
+                console.log(myArr);
+                myArr.splice(0,2);
+                currentNumber =''
+                operator = '*';
+                break;
+            } else {
+                console.log(myArr);
+                currentNumber = '';
+                display.textContent = 'X';
+                operator = '*';
+                console.log(myArr);
+                break;
+            }
+        case 'divide':
+            myArr.push(display.textContent);  //[2,2]
+            if (myArr.length == 2) {
+                console.log('two arrays');
+                display.textContent = operate(operator, +myArr[0], +myArr[1]);
+                myArr.push(display.textContent);
+                console.log(myArr);
+                myArr.splice(0,2);
+                currentNumber =''
+                operator = '/';
+                break;
+            } else {
+                console.log(myArr);
+                currentNumber = '';
+                display.textContent = 'X';
+                operator = '/';
                 console.log(myArr);
                 break;
             }
