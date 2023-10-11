@@ -47,12 +47,25 @@ menu.addEventListener('click', (event) => {
             display.textContent = currentNumber;
             break;
         case 'plus':
-            firstNumber = display.textContent;
-            currentNumber = '';
-            display.textContent = '0';
-            operator = '+';
-            console.log(firstNumber);
-            break;
+            myArr.push(display.textContent);  //[2,2]
+            if (myArr.length == 2) {
+                console.log('two arrays');
+                display.textContent = operate(operator, +myArr[0], +myArr[1]);
+                myArr.push(display.textContent);
+                console.log(myArr);
+                myArr.splice(0,2);
+                currentNumber ='';
+                operator = '+';
+                break;
+            } else {
+                console.log(myArr);
+                currentNumber = '';
+                display.textContent = '0';
+                operator = '+';
+                console.log(myArr);
+                break;
+
+            }
         case 'minus' :
             myArr.push(display.textContent);  //[2,2]
             if (myArr.length == 2) {
@@ -62,6 +75,7 @@ menu.addEventListener('click', (event) => {
                 console.log(myArr);
                 myArr.splice(0,2);
                 currentNumber =''
+                operator = '-';
                 break;
             } else {
                 console.log(myArr);
@@ -70,9 +84,9 @@ menu.addEventListener('click', (event) => {
                 operator = '-';
                 console.log(myArr);
                 break;
-
             }
         case 'equal':
+            console.log(`operator is ${operator}`);
             myArr.push(currentNumber);
             console.log(`${myArr[0]} / ${myArr[1]}`);
             display.textContent = operate(operator, +myArr[0], +myArr[1]);
