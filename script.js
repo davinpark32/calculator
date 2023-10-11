@@ -11,8 +11,9 @@ function divide(num1, num2) {
     return num1 / num2;
 }
 
-let firstNumber;
-let operator;
+let currentNumber = '';
+let firstNumber = '';
+let operator = '';
 let secondNumber;
 
 function operate (operator, num1, num2) {
@@ -28,4 +29,34 @@ function operate (operator, num1, num2) {
     }
 }
 
-console.log(operate('*', 1, 2));
+// When you click a number, it appears on the display
+let display = document.querySelector('#display');
+let menu = document.querySelector('#menu');
+
+menu.addEventListener('click', (event) => {
+    let target = event.target;
+
+    switch(target.id) {
+        case 'one':
+            currentNumber += '1';
+            display.textContent = currentNumber;
+            break;
+        case 'two':
+            currentNumber += '2';
+            display.textContent = currentNumber;
+            break;
+        case 'plus':
+            firstNumber = display.textContent;
+            currentNumber = '';
+            display.textContent = '0';
+            operator = '+';
+            console.log(firstNumber);
+            break;
+        case 'equal':
+            secondNumber = display.textContent;
+            console.log(`${firstNumber} / ${secondNumber}`);
+            display.textContent = operate(operator, +firstNumber, +secondNumber);
+            break;
+    }
+});
+
