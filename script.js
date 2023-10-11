@@ -36,7 +36,9 @@ let menu = document.querySelector('#menu');
 
 menu.addEventListener('click', (event) => {
     let target = event.target;
-
+    if (currentNumber == 0) {
+        currentNumber = '';
+    }
     switch(target.id) {
         case 'one':
             currentNumber += '1';
@@ -66,7 +68,7 @@ menu.addEventListener('click', (event) => {
             currentNumber += '7';
             display.textContent = currentNumber;
             break;
-        case '8':
+        case 'eight':
             currentNumber += '8';
             display.textContent = currentNumber;
             break;
@@ -174,6 +176,13 @@ menu.addEventListener('click', (event) => {
             currentNumber = '';
             display.textContent = '0'
             operator = '';
+            break;
+        case 'backspace':
+            currentNumber = currentNumber.slice(0,-1);
+            if(!currentNumber) {
+                currentNumber = '0';
+            }
+            display.textContent = currentNumber;
             break;
     }
 });
