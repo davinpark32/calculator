@@ -17,5 +17,13 @@ p {
 
 button {
     font-family: 'VT323', monospace;
-    padding: .5rem;
+    padding: 1rem;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 13rem;
+    gap: .1rem;
+    justify-content: center;
 }

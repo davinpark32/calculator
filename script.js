@@ -33,7 +33,101 @@ function operate (operator, num1, num2) {
 // When you click a number, it appears on the display
 let display = document.querySelector('#display');
 let menu = document.querySelector('#menu');
-
+document.body.addEventListener('keydown', (e) => {
+    let key = e.code;
+    console.log(key);
+    if (currentNumber == 0) {
+        currentNumber = '';
+    }
+    switch(key){
+        case 'Digit1':
+            currentNumber += '1';
+            display.textContent = currentNumber;
+            break;
+        case 'Digit2':
+            currentNumber += '2';
+            display.textContent = currentNumber;
+            break;
+        case 'Digit3':
+            currentNumber += '3';
+            display.textContent = currentNumber;
+            break;
+        case 'Digit4':
+            currentNumber += '4';
+            display.textContent = currentNumber;
+            break;
+        case 'Digit5':
+            currentNumber += '5';
+            display.textContent = currentNumber;
+            break;
+        case 'Digit6':
+            currentNumber += '6';
+            display.textContent = currentNumber;
+            break;
+        case 'Digit7':
+            currentNumber += '7';
+            display.textContent = currentNumber;
+            break;
+        case 'Digit8':
+            currentNumber += '8';
+            display.textContent = currentNumber;
+            break;
+        case 'Digit9':
+            currentNumber += '9';
+            display.textContent = currentNumber;
+            break;
+        case 'Digit0':
+            currentNumber += '0';
+            display.textContent = currentNumber;
+            break;
+        case 'Period':
+            if(!currentNumber.includes('.')) {
+                currentNumber += '.';
+                display.textContent = currentNumber;
+            }
+            break;
+        case 'Minus' :
+            myArr.push(display.textContent);  //[2,2]
+            if (myArr.length == 2) {
+                console.log('two arrays');
+                display.textContent = operate(operator, +myArr[0], +myArr[1]);
+                myArr.push(display.textContent);
+                console.log(myArr);
+                myArr.splice(0,2);
+                currentNumber =''
+                operator = '-';
+                break;
+            } else {
+                console.log(myArr);
+                currentNumber = '';
+                display.textContent = 'X';
+                operator = '-';
+                console.log(myArr);
+                break;
+            }
+        case 'Enter':
+            console.log(`operator is ${operator}`);
+            myArr.push(currentNumber);
+            console.log(`${myArr[0]} / ${myArr[1]}`);
+            display.textContent = operate(operator, +myArr[0], +myArr[1]);
+            myArr.splice(0,2);
+            console.log(myArr);
+            break;
+        case 'Escape':
+            myArr = [];
+            currentNumber = '';
+            display.textContent = '0'
+            operator = '';
+            break;
+        case 'Backspace':
+            currentNumber = currentNumber.slice(0,-1);
+            if(!currentNumber) {
+                currentNumber = '0';
+            }
+            display.textContent = currentNumber;
+            break;            
+    }
+})
 menu.addEventListener('click', (event) => {
     let target = event.target;
     if (currentNumber == 0) {
