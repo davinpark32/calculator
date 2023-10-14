@@ -1,13 +1,13 @@
 body {
     font-family: 'VT323', monospace;
+    background-color: #1f3038;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(82, 158, 82);
+
 }
 
 h1 {
-    font-size: 70px;
+    font-size: 3rem;
 }
 
 p {
@@ -17,13 +17,53 @@ p {
 
 button {
     font-family: 'VT323', monospace;
-    padding: 1rem;
+    padding: 15px 25px 15px 25px;
+    font-size: 2rem;
+    background-color: #f0e5c4;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+}
+
+.calculator {
+    background-color: #f5eedb;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 10px;
+    border: 5px solid black;
+}
 #menu {
     display: flex;
     flex-wrap: wrap;
     width: 13rem;
     gap: .1rem;
     justify-content: center;
+    width: 370px;
 }
+
+#title {
+    margin: 1rem;
+}
+
+#display {
+    margin: 1rem;
+    background-color: #57a3004f;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 5px 50px 5px 50px;
+    width: 80%;
+    color: #000000cb;
+    box-shadow: inset 0 0 10px #a4a4a4;
+    text-shadow: 1px 1px 2px #a4a4a4;
+}
+

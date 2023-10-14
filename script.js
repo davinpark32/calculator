@@ -100,7 +100,7 @@ document.body.addEventListener('keydown', (e) => {
             } else {
                 // console.log(myArr);
                 currentNumber = '';
-                display.textContent = 'X';
+                display.textContent = '+';
                 operator = '+';
                 console.log(myArr);
                 break;
@@ -119,7 +119,7 @@ document.body.addEventListener('keydown', (e) => {
             } else {
                 console.log(myArr);
                 currentNumber = '';
-                display.textContent = 'X';
+                display.textContent = '-';
                 operator = '-';
                 console.log(myArr);
                 break;
@@ -138,7 +138,7 @@ document.body.addEventListener('keydown', (e) => {
             } else {
                 console.log(myArr);
                 currentNumber = '';
-                display.textContent = 'X';
+                display.textContent = '*';
                 operator = '*';
                 console.log(myArr);
                 break;
@@ -157,7 +157,7 @@ document.body.addEventListener('keydown', (e) => {
             } else {
                 console.log(myArr);
                 currentNumber = '';
-                display.textContent = 'X';
+                display.textContent = '/';
                 operator = '/';
                 console.log(myArr);
                 break;
