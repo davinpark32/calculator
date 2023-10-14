@@ -39,51 +39,74 @@ document.body.addEventListener('keydown', (e) => {
     if (currentNumber == 0) {
         currentNumber = '';
     }
+    
     switch(key){
         case '1':
+            if (currentNumber.length<13){
             currentNumber += '1';
             display.textContent = currentNumber;
+            }
             break;
         case '2':
+            if (currentNumber.length<13){
             currentNumber += '2';
             display.textContent = currentNumber;
+            }
             break;
         case '3':
+            if (currentNumber.length<13){
             currentNumber += '3';
             display.textContent = currentNumber;
+            }
             break;
         case '4':
+            if (currentNumber.length<13){
             currentNumber += '4';
             display.textContent = currentNumber;
+            }
             break;
         case '5':
+            if (currentNumber.length<13){
             currentNumber += '5';
             display.textContent = currentNumber;
+            }
             break;
         case '6':
+            if (currentNumber.length<13){
             currentNumber += '6';
             display.textContent = currentNumber;
+            }
             break;
         case '7':
+            if (currentNumber.length<13){
             currentNumber += '7';
             display.textContent = currentNumber;
+            }
             break;
         case '8':
+            if (currentNumber.length<13){
             currentNumber += '8';
             display.textContent = currentNumber;
+            }
             break;
         case '9':
+            if (currentNumber.length<13){
             currentNumber += '9';
             display.textContent = currentNumber;
+            }
             break;
         case '0':
+            if (currentNumber.length<13){
             currentNumber += '0';
             display.textContent = currentNumber;
+            }
             break;
         case '.':
+            if (currentNumber.length<12){
             if(!currentNumber.includes('.')) {
                 currentNumber += '.';
                 display.textContent = currentNumber;
+            }
             }
             break;
         case '+':
@@ -187,6 +210,7 @@ document.body.addEventListener('keydown', (e) => {
             display.textContent = currentNumber;
             break;            
     }
+
 })
 menu.addEventListener('click', (event) => {
     let target = event.target;
@@ -195,50 +219,72 @@ menu.addEventListener('click', (event) => {
     }
     switch(target.id) {
         case 'one':
+            if (currentNumber.length<13){
             currentNumber += '1';
             display.textContent = currentNumber;
+            }
             break;
         case 'two':
+            if (currentNumber.length<13){
             currentNumber += '2';
             display.textContent = currentNumber;
+            }
             break;
         case 'three':
+            if (currentNumber.length<13){
             currentNumber += '3';
             display.textContent = currentNumber;
+            }
             break;
         case 'four':
+            if (currentNumber.length<13){
             currentNumber += '4';
             display.textContent = currentNumber;
+            }
             break;
         case 'five':
+            if (currentNumber.length<13){
             currentNumber += '5';
             display.textContent = currentNumber;
+            }
             break;
         case 'six':
+            if (currentNumber.length<13){
             currentNumber += '6';
             display.textContent = currentNumber;
+            }
             break;
         case 'seven':
+            if (currentNumber.length<13){
             currentNumber += '7';
             display.textContent = currentNumber;
+            }
             break;
         case 'eight':
+            if (currentNumber.length<13){
             currentNumber += '8';
             display.textContent = currentNumber;
+            }
             break;
         case 'nine':
+            if (currentNumber.length<13){
             currentNumber += '9';
             display.textContent = currentNumber;
+            }
             break;
         case 'zero':
+            if (currentNumber.length<13){
             currentNumber += '0';
             display.textContent = currentNumber;
+            }
             break;
         case 'decimal':
+            if (currentNumber.length<12){
             if(!currentNumber.includes('.')) {
                 currentNumber += '.';
                 display.textContent = currentNumber;
             }
+        }
             break;
         case 'plus':
             myArr.push(display.textContent);
