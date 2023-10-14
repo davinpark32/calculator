@@ -32,7 +32,6 @@ function operate (operator, num1, num2) {
 
 // When you click a number, it appears on the display
 let display = document.querySelector('#display');
-let state = document.querySelector('#state');
 let menu = document.querySelector('#menu');
 document.body.addEventListener('keydown', (e) => {
     let key = e.key;
@@ -87,6 +86,25 @@ document.body.addEventListener('keydown', (e) => {
                 display.textContent = currentNumber;
             }
             break;
+        case '+':
+            myArr.push(display.textContent);
+            if (myArr.length == 2) {
+                console.log('two arrays');
+                display.textContent = operate(operator, +myArr[0], +myArr[1]);
+                myArr.push(display.textContent);
+                console.log(myArr);
+                myArr.splice(0,2);
+                currentNumber ='';
+                operator = '+';
+                break;
+            } else {
+                // console.log(myArr);
+                currentNumber = '';
+                display.textContent = 'X';
+                operator = '+';
+                console.log(myArr);
+                break;
+            }
         case '-' :
             myArr.push(display.textContent);  //[2,2]
             if (myArr.length == 2) {
@@ -237,7 +255,6 @@ menu.addEventListener('click', (event) => {
                 operator = '+';
                 console.log(myArr);
                 break;
-
             }
         case 'minus' :
             myArr.push(display.textContent);  //[2,2]
