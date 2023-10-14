@@ -163,6 +163,9 @@ document.body.addEventListener('keydown', (e) => {
                 break;
             }
         case 'Enter':
+            if(!currentNumber||!operator){
+                break;
+            }
             console.log(`operator is ${operator}`);
             myArr.push(currentNumber);
             console.log(`${myArr[0]} / ${myArr[1]}`);
